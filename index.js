@@ -135,9 +135,9 @@ function hungryDog(weight, age){
   } else {
     if (age <= (4/12)){
       return weight * 0.1;
-    } else if (age <= (7/12)) {
+    } else if (age <= 0.582) {
       return weight * 0.05;
-    } else if (age <= 1) {
+    } else {
       return weight * 0.04;
   }
   }
@@ -168,7 +168,18 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
-const computerChoice = Math.floor(Math.random() * 3);
+const computerChoice = choice();
+
+function choice(){
+let choice = Math.floor(Math.random() * 3);
+if (choice === 0){
+  return 'rock';
+} else if (choice === 1){
+  return 'paper';
+} else {
+  return 'scissors';
+}
+}
 
 function game(user, computer){
   if (user === 'rock'){
@@ -177,6 +188,14 @@ function game(user, computer){
     user = 1;
   } else {
     user = 2;
+  }
+
+  if (computer === 'rock'){
+    computer = 0;
+  } else if (computer === 'paper'){
+    computer = 1;
+  } else {
+    computer = 2;
   }
 
   if (user === computer) {
@@ -206,11 +225,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  return kilometers * 0.621371;
 }
 
-
+console.log(miles(10));
 
 //Task 5b - Feet to CM
 /*
@@ -220,11 +239,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return cm / 30.48;
 }
 
-
+console.log(feet(5));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
