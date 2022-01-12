@@ -308,11 +308,18 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(string) {
+  const vowels = 'aeiou';
+  let counter = 0;
+  for(let i = 0; i < string.length - 1; i++){
+    if(vowels.includes(string[i].toLowerCase())){
+      counter += 1;
+    }
+  }
+  return counter
 }
 
-
+console.log(vowelCounter('HelloWorld'))
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
